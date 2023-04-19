@@ -1,5 +1,7 @@
 ## Telegram Automation
 
+## This repo contains many files for different purposes, find the best script suitable for yourself.
+
 - This script can be used for forwarding message from one channel (Source) to another channel (Destination).
 
 - ⚠️ Forwarded message will have forwarded from "xyz" channel tag.
