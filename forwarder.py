@@ -1,3 +1,5 @@
+# Forward messages from 1 channel to another channel 
+
 from telethon import TelegramClient
 
 api_id = 'API_ID' #without ''
