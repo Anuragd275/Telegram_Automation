@@ -1,20 +1,19 @@
-#Scrap users from 1 channel and send them vustom messages.
-
+""" This python script is designed to scrap members from a Telegram entity(Group/Supergroup), and send a custom message to each member in their inbox.
+    Custom message here is just a template, customize it according to your needs.
+"""
 from telethon.sync import TelegramClient, events
 from telethon import TelegramClient
 
+# Use your own values from Core Telegram.
 api_id = ""
 api_hash = ""
-
-
 client = TelegramClient('name', api_id, api_hash)
 
 user_name = []
 
-caption_text = "Are you looking for the best deals on your favorite items? Want to stay ahead of the competition and get unbeatable prices? Look no further than our exclusive WhatsApp group, where we provide the best steals on Amazon and Flipkart.\n\n Sorry to slide into your dm ;__;"
+caption_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida."
 
 async def main():
-
     chat = ''
     users = await client.get_participants(chat)
     print(users[0].first_name)
@@ -27,10 +26,9 @@ async def main():
         await client.send_file(receiver,'photo.jpeg', caption='')
 
     # this piece of code  will save all the members in a txt file.
-
-    # with open("output.txt", "w") as txt_file:
-    #     for line in user_name:
-    #         txt_file.write("".join(line) + "\n")
+    with open("output.txt", "w") as txt_file:
+         for line in user_name:
+             txt_file.write("".join(line) + "\n")
 
 with client:
     client.loop.run_until_complete(main())
